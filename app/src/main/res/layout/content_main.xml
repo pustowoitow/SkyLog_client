@@ -9,13 +9,268 @@
         tools:showIn="@layout/app_bar_main"
         tools:context=".MainActivity">
 
-    <android.support.v7.widget.RecyclerView
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:id="@+id/CraneTable"
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_margin="15dp"
+                 android:layout_marginRight="10dp"
+                 android:layout_marginTop="24dp"
+                 android:stretchColumns="*"
+                 app:layout_constraintTop_toTopOf="parent"
+                 app:layout_constraintLeft_toLeftOf="parent"
+                 app:layout_constraintRight_toRightOf="parent"
+                 android:background="#000" app:layout_constraintHorizontal_bias="0.0">
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:layout_span="2"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Кран"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Наименование крана"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Кировец"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Дата и время считывания"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="08.10.2019 18:00"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Номер крана"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="1"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Номер прибора"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="2"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Дата установки прибора"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="11.04.19"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Дата настройки прибора"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="11.04.19"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Начальное время"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="2000"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Конечное время"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="2054"/>
+        </TableRow>
+    </TableLayout>
+
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:id="@+id/DeviceTable"
+                 android:layout_height="wrap_content"
+                 android:layout_width="fill_parent"
+                 android:layout_margin="10dp"
+                 android:layout_marginTop="8dp"
+                 android:stretchColumns="*"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintLeft_toLeftOf="parent"
+                 app:layout_constraintRight_toRightOf="parent"
+                 android:background="#000" app:layout_constraintHorizontal_bias="0.473"
+                 app:layout_constraintVertical_bias="0.073" app:layout_constraintTop_toBottomOf="@+id/CraneTable">
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_span="2"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Прибор"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Наименование"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="СБУК323"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Тип РП"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="019-01"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_span="2"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Описание прибора безопасности"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_span="2"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Прибор безопасности для крана Кировец СБУК323-001-"/>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:id="@+id/AdditionTable"
+                 android:layout_height="wrap_content"
+                 android:layout_width="fill_parent"
+                 android:layout_margin="10dp"
+                 android:layout_marginTop="8dp"
+                 android:stretchColumns="*"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintLeft_toLeftOf="parent"
+                 app:layout_constraintRight_toRightOf="parent"
+                 android:background="#000" app:layout_constraintHorizontal_bias="1.0"
+                 app:layout_constraintVertical_bias="0.168" app:layout_constraintTop_toBottomOf="@+id/DeviceTable">
+        <TableRow android:orientation="vertical">
+            <TextView android:background="#fff"
+                      android:layout_span="2"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Долговременная информация"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Моточасы"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="150"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="Размер ТПЧР"/>
+            <TextView android:background="#fff"
+                      android:layout_margin="1dip"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:textColor="#000"
+                      android:gravity="center_horizontal"
+                      android:text="257"/>
+        </TableRow>
+    </TableLayout>
+
+    <!--  <android.support.v7.widget.RecyclerView
             android:id="@+id/paramList"
             android:layout_width="match_parent"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:layout_height="match_parent"/>
-
+            android:layout_height="match_parent"/>-->
 
 
 </android.support.constraint.ConstraintLayout>
