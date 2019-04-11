@@ -2,8 +2,19 @@
     <string name="app_name">SkyLog</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Rezonanz</string>
+    <string name="nav_header_subtitle">pustowoitow@bk.ru</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Выбор периода</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Логин</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in">Войти либо зарегистрироваться</string>
+    <string name="action_sign_in_short">Личный кабинет</string>
+    <string name="error_invalid_email">Неизвесгный логин</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">Пароль не верен</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
 </resources>
