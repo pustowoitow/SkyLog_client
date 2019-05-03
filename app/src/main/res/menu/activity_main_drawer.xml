@@ -5,21 +5,21 @@
 
     <group android:checkableBehavior="single">
         <item
-                android:id="@+id/nav_camera"
+                android:id="@+id/nav_system_info"
                 android:title=" Информация о системе"/>
         <!--       android:icon="@drawable/ic_menu_camera"-->
 
         <item
-                android:id="@+id/nav_gallery"
+                android:id="@+id/nav_bbox"
                 android:title="Черный ящик"/>
         <!--        android:icon="@drawable/ic_menu_gallery"-->
          <item
-                 android:id="@+id/nav_slideshow"
+                 android:id="@+id/nav_overload_table"
                  android:title="Таблица перегрузок"/>
         <!--       android:icon="@drawable/ic_menu_slideshow"-->
 
  <item
-         android:id="@+id/nav_manage"
+         android:id="@+id/nav_graphics"
          android:title="Графики"/>
         <!--  android:icon="@drawable/ic_menu_manage"-->
 </group>

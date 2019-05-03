@@ -8,10 +8,17 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.support.v7.widget.RecyclerView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.*
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import kotlin.coroutines.CoroutineContext
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, CoroutineScope {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,16 +66,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_camera -> {
+            R.id.nav_system_info -> {
+                layoutInflater.inflate(R.layout.app_bar_main, null)
                 // Handle the camera action
             }
-            R.id.nav_gallery -> {
+            R.id.nav_bbox -> {
+                layoutInflater.inflate(R.layout.bbox_layout, null)
+            }
+            R.id.nav_overload_table -> {
 
             }
-            R.id.nav_slideshow -> {
-
-            }
-            R.id.nav_manage -> {
+            R.id.nav_graphics -> {
 
             }
            /* R.id.nav_share -> {
@@ -82,4 +90,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+//-------Работа с сетью---------------------------------------------
+
+    private val rootJob = Job()
+    override val coroutineContext: CoroutineContext
+        get() = Dispatchers.Main + rootJob
+
+
+    private fun loadData() = launch {
+        delay(500)
+    }
+
+
+    override fun onDestroy() {
+        rootJob.cancel()
+        super.onDestroy()
+    }
+
 }
