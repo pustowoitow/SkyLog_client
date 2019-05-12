@@ -21,10 +21,8 @@ import android.R.attr.button
 import android.graphics.drawable.Drawable
 import android.R.attr.button
 import android.graphics.drawable.ColorDrawable
-
-
-
-
+import android.R.attr.button
+import android.graphics.drawable.RippleDrawable
 
 class BlocksListActivity : AppCompatActivity(), CoroutineScope {
 
@@ -33,33 +31,37 @@ class BlocksListActivity : AppCompatActivity(), CoroutineScope {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_blocks__list)
-        //
+        val color =  Color.LTGRAY
+        block1.setBackgroundColor(color)
+        block2.setBackgroundColor(color)
+        block3.setBackgroundColor(color)
+        block4.setBackgroundColor(color)
         My_MQTT_info.Connection_status=false
         Mqtt_check_blocks()
 
         block1.setOnClickListener {
-            My_MQTT_info.ChoosenBlock="1026918000013"
+            My_MQTT_info.ChoosenBlock= My_MQTT_info.BlocksNames[0]
             val intent = Intent(this, MainActivity::class.java)
-            if ((block1.getBackground() as ColorDrawable).color==Color.GREEN)startActivity(intent)
+            if ((block1.getBackground() as ColorDrawable).getColor()==Color.GREEN)startActivity(intent)
         }
         block2.setOnClickListener {
-            My_MQTT_info.ChoosenBlock="1028139000010"
+            My_MQTT_info.ChoosenBlock=My_MQTT_info.BlocksNames[1]
             val intent = Intent(this, MainActivity::class.java)
-            if ((block2.getBackground() as ColorDrawable).color==Color.GREEN)startActivity(intent)
+            if ((block2.getBackground() as ColorDrawable).getColor()==Color.GREEN)startActivity(intent)
         }
         block3.setOnClickListener {
-            My_MQTT_info.ChoosenBlock="1028139000005"
+            My_MQTT_info.ChoosenBlock=My_MQTT_info.BlocksNames[2]
             val intent = Intent(this, MainActivity::class.java)
-            if ((block3.getBackground() as ColorDrawable).color==Color.GREEN) startActivity(intent)
+            if ((block3.getBackground() as ColorDrawable).getColor()==Color.GREEN) startActivity(intent)
         }
         block4.setOnClickListener {
-            My_MQTT_info.ChoosenBlock="1028139000015"
+            My_MQTT_info.ChoosenBlock=My_MQTT_info.BlocksNames[3]
             val intent = Intent(this, MainActivity::class.java)
-            if ((block4.getBackground() as ColorDrawable).color==Color.GREEN)startActivity(intent)
+            if ((block4.getBackground() as ColorDrawable).getColor()==Color.GREEN)startActivity(intent)
         }
         block5.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            if ((block5.getBackground() as ColorDrawable).color==Color.GREEN) startActivity(intent)
+            startActivity(intent)
         }
         PublishData()
     }
@@ -69,12 +71,12 @@ class BlocksListActivity : AppCompatActivity(), CoroutineScope {
         mqttHelper = MqttHelper(applicationContext)
         mqttHelper!!.setCallback(object : MqttCallbackExtended {
             override fun connectComplete(b: Boolean, s: String) {
-                Snackbar.make(email, "Complete", Snackbar.LENGTH_INDEFINITE).show()
+                //Snackbar.make(email, "Complete", Snackbar.LENGTH_INDEFINITE).show()
                 My_MQTT_info.Connection_status=true
             }
 
             override fun connectionLost(throwable: Throwable) {
-                Snackbar.make(email, "Lost", Snackbar.LENGTH_INDEFINITE).show()
+                //Snackbar.make(email, "Lost", Snackbar.LENGTH_INDEFINITE).show()
                 My_MQTT_info.Connection_status=false
             }
 
@@ -127,6 +129,16 @@ class BlocksListActivity : AppCompatActivity(), CoroutineScope {
             delay(5000)
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        rootJob.start()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        rootJob.cancel()
     }
 
 

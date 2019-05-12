@@ -17,4 +17,26 @@
     <string name="error_incorrect_password">Пароль не верен</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="send_msg">Отправить сообщение</string>
+
+
+    <string name="wind">wind</string>
+    <string name="outs6_13">outs 6-13</string>
+    <string name="operatorintervent">operatorintervent</string>
+    <string name="ugaz">ugaz</string>
+    <string name="sugaz">sugaz</string>
+    <string name="linkont">linkont</string>
+    <string name="zeroput">zeroput</string>
+    <string name="s">s</string>
+    <string name="q">q</string>
+    <string name="r">r</string>
+    <string name="h">h</string>
+    <string name="qm">qm</string>
+    <string name="m">m</string>
+    <string name="outs1_5">outs 1-5</string>
+    <string name="dpm_s">dpm_s</string>
+    <string name="dpm_az">dpm_az</string>
+    <string name="dpm_r">dpm_r</string>
+    <string name="dpm_h">dpm_h</string>
+    <string name="force_dat">force_dat</string>
 </resources>

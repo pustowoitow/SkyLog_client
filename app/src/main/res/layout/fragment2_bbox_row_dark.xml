@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:background="@color/colorRow"
+              android:layout_width="wrap_content"
+              android:layout_height="@dimen/row_height">
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_operatorintervent"
+            android:layout_marginLeft="@dimen/margin"
+            android:gravity="center|start"
+            android:textColor="@android:color/white"
+            android:layout_height="match_parent"/>
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_wind"
+            android:layout_marginLeft="@dimen/margin"
+            android:gravity="center|start"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_outs6_13"
+            android:layout_marginLeft="@dimen/margin"
+            android:gravity="center|start"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_ugaz"
+            android:gravity="center|start"
+            android:layout_marginLeft="@dimen/margin"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_sugaz"
+            android:layout_marginLeft="@dimen/margin"
+            android:gravity="center|start"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_linkont"
+            android:gravity="center|start"
+            android:layout_marginLeft="@dimen/margin"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_zeroput"
+            android:gravity="center|start"
+            android:layout_marginLeft="@dimen/margin"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_s"
+            android:layout_marginLeft="@dimen/margin"
+            android:gravity="center|start"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_q"
+            android:layout_marginLeft="@dimen/margin"
+            android:gravity="center|start"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_r"
+            android:layout_marginLeft="@dimen/margin"
+            android:gravity="center|start"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_h"
+            android:gravity="center|start"
+            android:layout_marginLeft="@dimen/margin"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_qm"
+            android:layout_marginLeft="@dimen/margin"
+            android:gravity="center|start"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_m"
+            android:gravity="center|start"
+            android:layout_marginLeft="@dimen/margin"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_outs1_5"
+            android:gravity="center|start"
+            android:layout_marginLeft="@dimen/margin"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_dpm_s"
+            android:layout_marginLeft="@dimen/margin"
+            android:gravity="center|start"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_dpm_az"
+            android:gravity="center|start"
+            android:layout_marginLeft="@dimen/margin"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_dpm_r"
+            android:layout_marginLeft="@dimen/margin"
+            android:gravity="center|start"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_dpm_h"
+            android:gravity="center|start"
+            android:layout_marginLeft="@dimen/margin"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_force_dat"
+            android:gravity="center|start"
+            android:layout_marginLeft="@dimen/margin"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+</LinearLayout>

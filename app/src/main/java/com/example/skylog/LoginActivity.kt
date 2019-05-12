@@ -56,7 +56,8 @@ class LoginActivity : AppCompatActivity(){
         email_sign_in_button.setOnClickListener {
 
             if(!My_MQTT_info.Connection_status)startMqtt()
-            //if (mqttHelper!!.check_connection()) Next_Activity()
+            if (mqttHelper!!.check_connection()) Next_Activity()
+           // Next_Activity()
           //  if(My_MQTT_info.Connection_status)publishMqtt()
 
             //attemptLogin() 
@@ -74,7 +75,7 @@ class LoginActivity : AppCompatActivity(){
         mqttHelper = MqttHelper(applicationContext)
         mqttHelper!!.setCallback(object : MqttCallbackExtended {
             override fun connectComplete(b: Boolean, s: String) {
-                Snackbar.make(email, "Complete", Snackbar.LENGTH_INDEFINITE).show()
+              //  Snackbar.make(email, "Complete", Snackbar.LENGTH_INDEFINITE).show()
                 My_MQTT_info.Connection_status=true
                 Next_Activity()
             }

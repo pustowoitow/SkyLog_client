@@ -1,52 +1,54 @@
 package com.example.skylog.data
 
-data class Bbox_table(val params:String){
+data class Bbox_line(var LineNumber:Int) {
+        public var wind			    :Int
+        public var outs6_13			:Int
+        public var operatorintervent	:Boolean
+        public var instal       	    :Boolean
+
+        public var ugaz		        :Int
+        public var sugaz		        :Boolean
+        public var linkont			    :Boolean
+        public var kratzapas		    :Boolean
+        public var zeroput			    :Boolean
+
+        public var s		        :Int
+        public var q		        :Int
+        public var r		        :Int
+        public var h               :Int
+        public var qm              :Int
+        public var m               :Int
+        public var outs1_5         :Int
+
+        public var dpm_s  	        :Int
+        public var dpm_az          :Int
+        public var dpm_r           :Int
+        public var dpm_h           :Int
+        public var force_dat       :Int
     init {
-        var ugstr			    :Int
-        var instal			    :Int
+        wind			    =0
+        outs6_13			=0
+        operatorintervent	=false
+        instal       	    =false
 
-        var uggus			    :Int
-        var operatorintervent	:Int
+        ugaz		        =0
+        sugaz		        =false
+        linkont			    =false
+        kratzapas		    =false
+        zeroput			    =false
 
-        var lstr		        :Int
-        var head		        :Int
+        s		        =0
+        q		        =0
+        r		        =0
+        h               =0
+        qm              =0
+        m               =0
+        outs1_5         =0
 
-        var lgus		        :Int
-        var pol			        :Int
-        var out1		        :Int
-        var out2		        :Int
-        var out3		        :Int
-
-        var m			        :Int
-        var m_inactive	        :Int
-
-        var force               :Int
-        var q                   :Int
-        var q_inactive          :Int
-        var r                   :Int
-        var h                   :Int
-        var qm                  :Int
-
-        var ugaz			:Int
-        var index_go			:Boolean
-        var index_counterweight	:Boolean
-        var index_angle_twr		:Boolean
-
-        var blk_hard_error		:Boolean
-        var blk_feat			:Boolean
-        var blk_two_hoist		:Boolean
-        var blk_moment		    :Boolean
-        var blk_radius_min		:Boolean
-        var blk_radius_max		:Boolean
-        var blk_hook_up		    :Boolean
-        var blk_qm			    :Boolean
-
-        var blk_cutoff_radius_min	:Boolean
-        var blk_cutoff_radius_max	:Boolean
-        var blk_cutoff_ug_str_min	:Boolean
-        var blk_cutoff_ug_str_max	:Boolean
-        var index_lift		        :Boolean
-        var index_boom_type	        :Boolean
-        var cycle			        :Boolean
+        dpm_s  	        =0
+        dpm_az          =0
+        dpm_r           =0
+        dpm_h           =0
+        force_dat       =0
     }
 }

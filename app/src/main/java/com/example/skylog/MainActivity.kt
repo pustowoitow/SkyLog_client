@@ -1,19 +1,22 @@
 package com.example.skylog
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentActivity
+import android.support.v4.app.FragmentContainer
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.support.v7.widget.RecyclerView
+import com.example.skylog.Fragments.bbox
+import com.example.skylog.Fragments.send_msg
+import com.example.skylog.Fragments.system_info
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.*
-import okhttp3.OkHttpClient
-import okhttp3.Request
 import kotlin.coroutines.CoroutineContext
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -25,9 +28,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            displaySelectedScreen(R.id.nav_send)
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -37,6 +40,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+        displaySelectedScreen(R.id.nav_system_info)
     }
 
     override fun onBackPressed() {
@@ -63,15 +67,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        when (item.itemId) {
+    private fun displaySelectedScreen(itemId:Int)
+    {
+
+        var fragment: Fragment? = null
+        when (itemId) {
             R.id.nav_system_info -> {
-                layoutInflater.inflate(R.layout.app_bar_main, null)
+
+                fragment= system_info()
+                /*layoutInflater.inflate(R.layout.app_bar_main, null)
+                setContentView(R.layout.app_bar_main);*/
                 // Handle the camera action
             }
             R.id.nav_bbox -> {
-                layoutInflater.inflate(R.layout.bbox_layout, null)
+                fragment= bbox()
+
+                /*layoutInflater.inflate(R.layout.bbox_layout, null)
+                setContentView(R.layout.bbox_layout);*/
             }
             R.id.nav_overload_table -> {
 
@@ -79,14 +91,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_graphics -> {
 
             }
-           /* R.id.nav_share -> {
+            /* R.id.nav_share -> {
 
-            }*/
+             }*/
             R.id.nav_send -> {
+                fragment= send_msg()
 
             }
         }
+        if (fragment != null) {
+            val ft = supportFragmentManager.beginTransaction()
+            ft.replace(R.id.content_frame, fragment)
+            ft.commit()
+        }
 
+
+    }
+
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Handle navigation view item clicks here.
+        displaySelectedScreen(item.itemId)
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
