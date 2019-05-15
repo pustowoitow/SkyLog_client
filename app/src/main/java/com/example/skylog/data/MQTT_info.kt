@@ -10,7 +10,8 @@ data class MQTT_info (var serverUri:String, var login:String, var password:Strin
 
 
 public val BlocksNames:List<String> =listOf<String>(
-        "1028139000003",
+        //"1028139000003",
+        "0",
         "1028139000010",
         "1028139000005",
         "1028139000015"
@@ -24,6 +25,7 @@ class commands
 {
     val cmd_unknown:String="/cmd/fghnf"     //Неизвестная команда
     val cmd_online:String="/cmd/online"     //Включение режима онлайн для блока
+    val cmd_message:String="/cmd/message"     //Включение режима онлайн для блока
     val cmd_bbox:String="/cmd/bbox"         //команда считывания черного ящика (передается данные кол-ва строк, которые нужно получить)
     val cmd_bbox_online:String="/cmd/bbox_online"   //передача всех новых строк при включении режима
     val cmd_upload:String="/cmd/upload"             // запрос секций для чтения

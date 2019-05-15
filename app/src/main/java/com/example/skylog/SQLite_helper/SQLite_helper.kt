@@ -11,20 +11,28 @@ import android.database.sqlite.SQLiteOpenHelper
 override fun onCreate(db:SQLiteDatabase) {
 db.execSQL(
     "create table " + TABLE_BBOX + "("
+            +KEY_ID + " INTEGER PRIMARY KEY, "
+            + KEY_year + " integer,"
+            + KEY_month + " integer,"
+            + KEY_seconds + " integer,"
+            + KEY_minute + " integer,"
+            + KEY_day + " integer,"
+            + KEY_hour + " integer,"
+
             + KEY_wind + " integer,"
-            + KEY_outs6_13 + " integer"
+            + KEY_outs6_13 + " integer,"
             + KEY_operatorintervent + " integer,"
             + KEY_instal + " integer,"
-            + KEY_ugaz + " integer,"
+            + KEY_ugaz + " real,"
             + KEY_sugaz + " integer,"
             + KEY_linkont + " integer,"
             + KEY_kratzapas + " integer,"
             + KEY_zeroput + " integer,"
-            + KEY_s + " integer,"
-            + KEY_q + " integer,"
-            + KEY_r + " integer,"
-            + KEY_h + " integer,"
-            + KEY_qm + " integer,"
+            + KEY_s + " real,"
+            + KEY_q + " real,"
+            + KEY_r + " real,"
+            + KEY_h + " real,"
+            + KEY_qm + " real,"
             + KEY_m + " integer,"
             + KEY_outs1_5 + " integer,"
             + KEY_dpm_s + " integer,"
@@ -45,9 +53,17 @@ onCreate(db)
 
 companion object {
 
- val DATABASE_VERSION = 2
+ val DATABASE_VERSION = 4
  val DATABASE_NAME = "bboxDb"
  val TABLE_BBOX = "bbox"
+
+   val KEY_ID		      = "ID"
+   val KEY_year		      = "year"
+   val KEY_month		  = "month"
+   val KEY_seconds		  = "seconds"
+   val KEY_minute		  = "minute"
+   val KEY_day		      = "day"
+   val KEY_hour		      = "hour"
 
     val KEY_wind		      = "wind"
     val KEY_outs6_13	      = "outs6_13"

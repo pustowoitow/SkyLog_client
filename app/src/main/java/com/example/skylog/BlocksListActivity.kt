@@ -67,7 +67,6 @@ class BlocksListActivity : AppCompatActivity(), CoroutineScope {
     }
 
     private fun Mqtt_check_blocks() {
-        // Snackbar.make(email, "Hello", Snackbar.LENGTH_INDEFINITE).show()
         mqttHelper = MqttHelper(applicationContext)
         mqttHelper!!.setCallback(object : MqttCallbackExtended {
             override fun connectComplete(b: Boolean, s: String) {
@@ -97,14 +96,6 @@ class BlocksListActivity : AppCompatActivity(), CoroutineScope {
 
             }
         })
-
-        val topic:String=My_MQTT_info.BlocksNames[0] + My_MQTT_info.acks.cmdack_cmds
-        //mqttHelper.subscribeToTopic(topic)
-
-        val topic2:String=My_MQTT_info.BlocksNames[0] + "/cmd/dfjid"
-       // mqttHelper.publishMessage("", 0, topic2)  //посылаем неизвестyю команду для получения ответа
-
-
     }
 
 //-------Работа с сетью в фоне---------------------------------------------

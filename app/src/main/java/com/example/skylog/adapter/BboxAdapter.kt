@@ -44,11 +44,13 @@ class BboxAdapter(private val context: Context, var Bbox_List: MutableList<Bbox_
 
     override fun onBindViewHolder(holder: BboxViewHolder, position: Int) {
         val Bbox_line:Bbox_line=Bbox_List[Bbox_List.count()-position-1]
-
+        holder.val_time.setText(Bbox_line.day.toString()+"."+Bbox_line.month.toString()+"."
+                +Bbox_line.year.toString()+" "+Bbox_line.hour.toString()+":"+Bbox_line.minute.toString()+":"+Bbox_line.seconds.toString())
         holder.val_wind.setText(Bbox_line.wind.toString())
         holder.val_outs6_13.setText(Bbox_line.outs6_13.toString())
-        holder.val_operatorintervent.setText(if(Bbox_line.operatorintervent)"ON" else "OFF")
+        holder.val_operatorintervent.setText(if(Bbox_line.operatorintervent==true)"ON" else "OFF")
         holder.val_ugaz.setText(Bbox_line.ugaz.toString())
+        holder.val_sugaz.setText(if(Bbox_line.sugaz==true)"ON" else "OFF")
         holder.val_linkont.setText(if(Bbox_line.linkont)"ON" else "OFF")
         holder.val_zeroput.setText(if(Bbox_line.zeroput)"ON" else "OFF")
         holder.val_s.setText(Bbox_line.s.toString())
@@ -70,10 +72,12 @@ class BboxAdapter(private val context: Context, var Bbox_List: MutableList<Bbox_
     }
 
     inner class BboxViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var val_time                        : TextView
         var val_wind                        : TextView
         var val_outs6_13                    : TextView
         var val_operatorintervent           : TextView
         var val_ugaz                        : TextView
+        var val_sugaz                       : TextView
         var val_linkont                     : TextView
         var val_zeroput                     : TextView
         var val_s                           : TextView
@@ -91,10 +95,12 @@ class BboxAdapter(private val context: Context, var Bbox_List: MutableList<Bbox_
 
 
         init {
+            val_time                = view.findViewById(R.id.val_time)
             val_wind                = view.findViewById(R.id.val_wind)
             val_outs6_13            = view.findViewById(R.id.val_outs6_13)
             val_operatorintervent   = view.findViewById(R.id.val_operatorintervent)
             val_ugaz                = view.findViewById(R.id.val_ugaz)
+            val_sugaz                = view.findViewById(R.id.val_sugaz)
             val_linkont             = view.findViewById(R.id.val_linkont)
             val_zeroput             = view.findViewById(R.id.val_zeroput)
             val_s                   = view.findViewById(R.id.val_s)

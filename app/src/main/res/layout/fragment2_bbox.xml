@@ -19,6 +19,17 @@
 
             <TextView
                     android:layout_width="@dimen/cell_width"
+                    android:id="@+id/time"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="@dimen/margin"
+                    android:text="@string/time"
+                    android:textAllCaps="true"
+                    android:gravity="center|start"
+                    android:textColor="@android:color/white"
+                    android:layout_height="match_parent"/>
+
+            <TextView
+                    android:layout_width="@dimen/cell_width"
                     android:id="@+id/wind"
                     android:textStyle="bold"
                     android:layout_marginLeft="@dimen/margin"

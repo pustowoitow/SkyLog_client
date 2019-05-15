@@ -7,11 +7,12 @@
 
     <TextView
             android:layout_width="@dimen/cell_width"
-            android:id="@+id/val_operatorintervent"
+            android:id="@+id/val_time"
             android:layout_marginLeft="@dimen/margin"
             android:gravity="center|start"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimaryText"
             android:layout_height="match_parent"/>
+
     <TextView
             android:layout_width="@dimen/cell_width"
             android:id="@+id/val_wind"
@@ -23,6 +24,14 @@
     <TextView
             android:layout_width="@dimen/cell_width"
             android:id="@+id/val_outs6_13"
+            android:layout_marginLeft="@dimen/margin"
+            android:gravity="center|start"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:layout_width="@dimen/cell_width"
+            android:id="@+id/val_operatorintervent"
             android:layout_marginLeft="@dimen/margin"
             android:gravity="center|start"
             android:textColor="@color/colorPrimaryText"

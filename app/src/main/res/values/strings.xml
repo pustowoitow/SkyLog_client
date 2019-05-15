@@ -19,7 +19,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
     <string name="send_msg">Отправить сообщение</string>
 
-
+    <string name="time">time</string>
     <string name="wind">wind</string>
     <string name="outs6_13">outs 6-13</string>
     <string name="operatorintervent">operatorintervent</string>
