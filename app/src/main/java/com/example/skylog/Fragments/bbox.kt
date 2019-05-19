@@ -34,6 +34,7 @@ import android.util.Base64
 
 class bbox : Fragment(), CoroutineScope {
 
+    public val fragment_name:String="bbox"
     var my_context: Context?=null
     var dbHelper: DBHelper? = null
     var mqttHelper:MqttHelper?=null
@@ -141,7 +142,7 @@ class bbox : Fragment(), CoroutineScope {
         Bbox_line.linkont=if (encodeValue[7].toInt().shr(5).and(0x01)==1) true else false
         Bbox_line.kratzapas=if (encodeValue[7].toInt().shr(6).and(0x01)==1) true else false
         Bbox_line.zeroput=if (encodeValue[7].toInt().shr(7).and(0x01)==1) true else false
-        Bbox_line.s=((encodeValue[8].toInt()+ encodeValue[9].toInt().shl(8)).toFloat()-0.5F)/32F
+        Bbox_line.s=((encodeValue[8].toInt() + encodeValue[9].toInt().shl(8)).toFloat()-0.5F)/32F
         Bbox_line.q=((encodeValue[10].toInt()+ encodeValue[11].toInt().shl(8)).toFloat()-0.5F)/256F
         Bbox_line.r=((encodeValue[12].toInt()+ encodeValue[13].toInt().shl(8)).toFloat()-0.5F)/256F
         Bbox_line.h=((encodeValue[14].toInt()+ encodeValue[15].toInt().shl(8)).toFloat()-0.5F)/32F
@@ -274,7 +275,7 @@ class bbox : Fragment(), CoroutineScope {
     override fun onStop() {
         val cmd: String = My_MQTT_info.ChoosenBlock + My_MQTT_info.cmd.cmd_online
         mqttHelper!!.publishMessage("state=0,period=1",0,cmd)  //посылаем неизвестyю команду для получения ответа
-    database!!.delete(DBHelper.TABLE_BBOX, null, null)
+ //   database!!.delete(DBHelper.TABLE_BBOX, null, null)
         rootJob.cancel()
         dbHelper!!.close()
         super.onStop()

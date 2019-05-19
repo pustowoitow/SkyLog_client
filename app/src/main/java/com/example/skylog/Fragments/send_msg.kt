@@ -22,6 +22,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage
 
 class send_msg : Fragment() {
 
+    public val fragment_name:String="send_msg"
     var mqttHelper:MqttHelper?=null
     var RootView: View? = null
     var my_context: Context?=null

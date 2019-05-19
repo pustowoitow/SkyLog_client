@@ -42,7 +42,7 @@ class acknolegments
 
 class Info
 {
-    val info_basic__online:String="/evt/bbox/02102/basic_info"
+    val info_basic__online:String="/evt/bbox/00207/basic_info"
     val info_tpchr_online:String="/evt/online/fmt/bin/00207"
     val info_bbox:String="/evt/bbox/json"
 }

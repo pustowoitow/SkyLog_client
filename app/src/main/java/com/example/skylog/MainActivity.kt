@@ -1,5 +1,7 @@
 package com.example.skylog
 
+import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
@@ -11,6 +13,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.support.v7.widget.RecyclerView
+import com.example.skylog.Fragments.MainPage
 import com.example.skylog.Fragments.bbox
 import com.example.skylog.Fragments.send_msg
 import com.example.skylog.Fragments.system_info
@@ -21,7 +24,10 @@ import kotlin.coroutines.CoroutineContext
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, CoroutineScope {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    var fragment: Fragment? = null
+    var Main_Page_flag:Boolean=false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +46,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
-        displaySelectedScreen(R.id.nav_system_info)
+        //displaySelectedScreen(R.id.nav_system_info)
     }
 
     override fun onBackPressed() {
@@ -69,18 +75,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun displaySelectedScreen(itemId:Int)
     {
-
-        var fragment: Fragment? = null
         when (itemId) {
             R.id.nav_system_info -> {
 
                 fragment= system_info()
+                Main_Page_flag=false
                 /*layoutInflater.inflate(R.layout.app_bar_main, null)
                 setContentView(R.layout.app_bar_main);*/
                 // Handle the camera action
             }
             R.id.nav_bbox -> {
                 fragment= bbox()
+                Main_Page_flag=false
 
                 /*layoutInflater.inflate(R.layout.bbox_layout, null)
                 setContentView(R.layout.bbox_layout);*/
@@ -89,25 +95,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_graphics -> {
-
+                fragment= MainPage()
+                Main_Page_flag=true
             }
             /* R.id.nav_share -> {
 
              }*/
             R.id.nav_send -> {
                 fragment= send_msg()
+                Main_Page_flag=false
 
             }
         }
         if (fragment != null) {
             val ft = supportFragmentManager.beginTransaction()
-            ft.replace(R.id.content_frame, fragment)
+            ft.replace(R.id.content_frame, fragment!!)
             ft.commit()
         }
 
 
     }
-
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
@@ -115,21 +122,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
-//-------Работа с сетью---------------------------------------------
 
-    private val rootJob = Job()
-    override val coroutineContext: CoroutineContext
-        get() = Dispatchers.Main + rootJob
-
-
-    private fun loadData() = launch {
-        delay(500)
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        if(Main_Page_flag==true && fragment!!.isResumed()){
+            //do nothing here if we're showing the fragment
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }else{
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR); // otherwise lock in portrait
+        }
+        super.onConfigurationChanged(newConfig);
     }
 
-
-    override fun onDestroy() {
-        rootJob.cancel()
-        super.onDestroy()
-    }
 
 }

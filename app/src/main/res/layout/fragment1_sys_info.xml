@@ -94,7 +94,7 @@
                           android:textAppearance="?android:attr/textAppearanceMedium"
                           android:textColor="#000"
                           android:gravity="center_horizontal"
-                          android:text="11.04.19"/>
+                          android:text="11.04.19 17:00:25"/>
             </TableRow>
             <TableRow>
                 <TextView android:background="#fff"
@@ -108,7 +108,7 @@
                           android:textAppearance="?android:attr/textAppearanceMedium"
                           android:textColor="#000"
                           android:gravity="center_horizontal"
-                          android:text="11.04.19"/>
+                          android:text="11.04.19 17:00:25"/>
             </TableRow>
             <TableRow>
                 <TextView android:background="#fff"
