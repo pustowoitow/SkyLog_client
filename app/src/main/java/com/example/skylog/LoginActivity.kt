@@ -21,6 +21,7 @@ import android.Manifest.permission.READ_CONTACTS
 
 import android.content.Intent
 import android.util.Log
+import android.widget.EditText
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken
 import org.eclipse.paho.client.mqttv3.MqttMessage
 import org.eclipse.paho.client.mqttv3.MqttCallbackExtended
@@ -53,10 +54,17 @@ class LoginActivity : AppCompatActivity(){
             false
         })
 
+        val login:EditText=findViewById(R.id.email)
+        val passwd:EditText=findViewById(R.id.password)
+
         email_sign_in_button.setOnClickListener {
 
-            if(!My_MQTT_info.Connection_status)startMqtt()
-            if (mqttHelper!!.check_connection()) Next_Activity()
+            My_MQTT_info.login=login.text.toString()
+            My_MQTT_info.password=passwd.text.toString()
+            if ((My_MQTT_info.login.isNotEmpty())&&(My_MQTT_info.password.isNotEmpty())) {
+                if (!My_MQTT_info.Connection_status) startMqtt()
+                if (mqttHelper!!.check_connection()) Next_Activity()
+            }
            // Next_Activity()
           //  if(My_MQTT_info.Connection_status)publishMqtt()
 

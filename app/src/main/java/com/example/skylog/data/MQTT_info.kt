@@ -47,4 +47,4 @@ class Info
     val info_bbox:String="/evt/bbox/json"
 }
 
-var My_MQTT_info:MQTT_info=MQTT_info("tcp://mx3.rez.ru:18833","1028139000099", "xvRN3AfUo")
+var My_MQTT_info:MQTT_info=MQTT_info("tcp://mx3.rez.ru:18833","0", "0")
